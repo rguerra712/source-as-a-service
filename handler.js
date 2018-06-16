@@ -1,17 +1,34 @@
 'use strict';
 
+const sourceCodeReader = require('./source-code-reader');
+
 module.exports.source = (event, context, callback) => {
   let url = event.queryStringParameters && event.queryStringParameters['url'];
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Where is my source code?',
-      input: event,
-    }),
-  };
+  if (!url) {
+    const response = {
+      statusCode: 400,
+      body: 'url query string is required',
+    };
 
-  callback(null, response);
+    callback(null, response);
+    return;
+  }
+  sourceCodeReader.getSource(url)
+    .then(source => {
+      const response = {
+        statusCode: 200,
+        body: source,
+      };
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
+      callback(null, response);
+    })
+    .catch(error => {
+      const response = {
+        statusCode: 500,
+        body: error,
+      };
+
+      callback(null, response);
+      console.error(error);
+    });
 };

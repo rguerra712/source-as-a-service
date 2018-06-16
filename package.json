@@ -1,0 +1,19 @@
+{
+  "name": "source-as-a-service",
+  "version": "1.0.0",
+  "description": "Obtain html source as a service. Avoid large html request dependencies and parse html after javascript has loaded.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R. Stephen Guerra",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rguerra712/source-as-a-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rguerra712/source-as-a-service/issues"
+  },
+  "homepage": "https://github.com/rguerra712/source-as-a-service#readme"
+}

@@ -60,5 +60,8 @@ typings/
 # next.js build output
 .next
 
-+# Ignore library files from selenium library
-+lib/
+# Ignore library files from selenium library
+lib/
+
+# Serverless output
+.serverless

@@ -17,7 +17,8 @@ module.exports.source = async (event, context, callback) => {
     callback(null, response);
     return;
   }
-    try {
+  url = decodeURI(url);
+  try {
       var source = await sourceCodeReader.getSource(url, waitForElement);
       const response = {
         statusCode: 200,

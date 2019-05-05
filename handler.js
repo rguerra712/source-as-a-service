@@ -10,7 +10,7 @@ module.exports.source = async (event, context, callback) => {
       statusCode: 400,
       body: JSON.stringify({ error: 'url query string is required'}, null, 2),
       headers: {
-        "content-type": "v"
+        "content-type": "application/json"
       },
     };
     console.log(`request made with no url: ${JSON.stringify(event, null, 2)}`)

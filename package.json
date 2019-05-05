@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/rguerra712/source-as-a-service/issues"
   },
-  "homepage": "https://github.com/rguerra712/source-as-a-service#readme"
+  "homepage": "https://github.com/rguerra712/source-as-a-service#readme",
+  "devDependencies": {}
 }

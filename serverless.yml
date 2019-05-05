@@ -9,7 +9,7 @@ provider:
 functions:
   source:
     handler: handler.source
-    timeout: 10
+    timeout: 30
     events:
       - http:
           path: source
